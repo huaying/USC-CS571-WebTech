@@ -1,0 +1,106 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+
+    </style>
+
+    <style name="Base">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:paddingLeft">2dp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Head" parent="Base">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Text" parent="Base">
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_marginTop">30dp</item>
+    </style>
+	<style name="Err" parent="Base">
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:textColor">#FF0000</item>
+    </style>
+    <style name="ErrNotFound" parent="Base">
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="Button" parent="Base">
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginTop">25dp</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="Logo" parent="Base">
+
+        <item name="android:layout_width">130dp</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <style name="HR" parent="Base">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">#FFFFFF</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginTop">9dp</item>
+    </style>
+
+    <style name="Tablerow">
+        <item name="android:paddingLeft">3dp</item>
+        <item name="android:paddingRight">3dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+
+    <style name="oddTablerow" parent="Tablerow">
+        <item name="android:background">@drawable/odd_tablerow</item>
+    </style>
+
+    <style name="evenTablerow" parent="Tablerow">
+        <item name="android:background">@drawable/even_tablerow</item>
+    </style>
+
+    
+    <!-- Old EditText Style-->
+    <style name="Widget.Group" parent="@android:style/Widget">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">40dp</item>
+		<item name="android:layout_marginLeft">10dp</item>
+		<item name="android:layout_marginRight">10dp</item>
+		<item name="android:paddingLeft">15dp</item>
+		<item name="android:padding">2dp</item>
+		<item name="android:background">@drawable/edit_input</item>
+		
+	</style>
+
+	<style name="Widget.Group.Single" >
+	    <item name="android:padding">5dp</item>
+	    <item name="android:layout_height">40dp</item>
+		<item name="android:background">@drawable/edit_input</item>
+	</style>
+</resources>

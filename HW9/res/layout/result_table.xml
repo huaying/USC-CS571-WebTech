@@ -1,0 +1,360 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/footer" >
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+           
+            android:stretchColumns="1" >
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                style="@style/evenTablerow"
+                android:layout_width="match_parent" >
+
+                <TextView android:text="See more details on Zillow:"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                     />
+
+ 				<Button
+                    android:id="@+id/authButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/fb_share" 
+                    android:gravity="right"
+                    />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/link"
+                style="@style/evenTablerow" >
+
+                <TextView
+                    android:id="@+id/linkVal"
+                    android:text="" />
+
+                
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/prop"
+                style="@style/oddTablerow" >
+
+                <TextView android:text="Property Type" 
+                    android:layout_width="0dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/propVal"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/yr"
+                style="@style/evenTablerow" >
+
+                <TextView android:text="Year Built" 
+                     android:layout_width="0dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/yrVal"
+                     android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/lotsize"
+                style="@style/oddTablerow" >
+
+                <TextView android:text="Lot Size" 
+                     android:layout_width="0dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/lotsizeVal"
+                     android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/finish_area"
+                style="@style/evenTablerow" 
+                 android:layout_width="0dp"
+                    android:layout_weight="1">
+
+                <TextView android:text="Finished Area" />
+
+                <TextView
+                    android:id="@+id/finish_areaVal"
+                     android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/bath"
+                style="@style/oddTablerow" >
+
+                <TextView android:text="Bathrooms" 
+                     android:layout_width="0dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/bathVal"
+                     android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/bed"
+                style="@style/evenTablerow" >
+
+                <TextView android:text="Bedrooms" 
+                     android:layout_width="0dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/bedVal"
+                     android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/taxyr"
+                style="@style/oddTablerow" >
+
+                <TextView android:text="Tax Assessment Year" 
+                     android:layout_width="0dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/taxyrVal"
+                     android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tax"
+                style="@style/evenTablerow" >
+
+                <TextView android:text="Tax Assessment"
+                     android:layout_width="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/taxVal"
+                     android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/lastsoldprice"
+                style="@style/oddTablerow" >
+
+                <TextView android:text="Last Sold Price"
+                     android:layout_width="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/lastsoldpriceVal"
+                     android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/lastsolddate"
+                style="@style/evenTablerow" >
+
+                <TextView android:text="Last Sold Date"
+                     android:layout_width="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/lastsolddateVal"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/zestimate"
+                style="@style/oddTablerow" >
+
+                <TextView
+                    android:id="@+id/zestimateDate"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.2"
+                    android:text="Zestimate ® Property Estimate as of" />
+
+                <TextView
+                    android:id="@+id/zestimateVal"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/overall30"
+                style="@style/evenTablerow" 
+                android:layout_width="match_parent">
+
+                <TextView android:text="30 Days Overall Change"
+                    android:layout_weight="5" />
+                
+                <LinearLayout
+                     android:layout_width="0dp"
+                     android:layout_weight="100"
+                     android:gravity="right"
+                   >
+                    
+                     <ImageView 
+                        android:id="@+id/overall30ValArrow"
+                         android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        
+                        />
+                     
+                    <TextView
+                    android:id="@+id/overall30Val"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                    android:text="" />
+                    
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/proprange"
+                style="@style/oddTablerow" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="All Time Property Range" />
+
+                <TextView
+                    android:id="@+id/proprangeVal"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.2"
+                    android:gravity="right"
+                    android:text="" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/rentzestimate"
+                style="@style/evenTablerow" >
+
+                <TextView
+                    android:id="@+id/rentzestimateDate"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.2"
+                    android:text="Rent Zestimate ® Rent Valuation as of" />
+
+                <TextView
+                    android:id="@+id/rentzestimateVal"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/rent30"
+                style="@style/oddTablerow" 
+                android:layout_width="match_parent">
+
+                <TextView android:text="30 Days Rent Change" 
+                     android:layout_weight="5"/>
+
+ 
+                <LinearLayout
+                    android:layout_width="0dp"
+                     android:layout_weight="100"
+                     android:gravity="right"
+                    >"
+                    
+                     <ImageView 
+                        android:id="@+id/rent30ValArrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+
+                    <TextView
+                    android:id="@+id/rent30Val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+                     
+                </LinearLayout>
+                  
+                
+                
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/rentrange"
+                style="@style/evenTablerow" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="All Time Rent Range" />
+
+                <TextView
+                    android:id="@+id/rentrangeVal"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.3"
+                    android:gravity="right"
+                    android:text="" />
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
+        android:gravity="center" >
+
+        <TextView
+            android:id="@+id/footerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:gravity="center" />
+    </RelativeLayout>
+
+</RelativeLayout>

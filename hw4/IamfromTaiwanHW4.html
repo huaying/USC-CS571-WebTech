@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta author="Huaying Tsai">
+    <title>CSCI571 HW4</title>
+</head>
+<body>
+    <div style="text-align:center">
+    <h2>Enter URL for Real Estate Catalog XML File</h2>
+    <form id="form">
+        <div><input type="text" id="query" /></div>
+        <div><button type="submit" id="submit">Submit Query</button></div>
+    </form>
+    </div>
+    <script>
+        (function(){
+            var ERROR_CODE = 0
+                ,query
+                ,xmlDoc
+                ,xmlhttp
+                ,getXML = function(url){
+                        xmlhttp = new XMLHttpRequest() || new ActiveXObject("Microsoft.XMLHTTP");     
+                        xmlhttp.open("get",url+"?"+Math.random(),false);
+                        xmlhttp.send();
+                        console.log(xmlhttp.status, xmlhttp);
+                        if(xmlhttp.status == '404'){
+                            ERROR_CODE = 4;
+                            return;
+                        }        
+                        xmlDoc = xmlhttp.responseXML;
+                        return xmlDoc;
+                }
+                ,lNode = function(node,tag){
+                        return node.getElementsByTagName(tag)[0];
+                }
+                ,lValue = function(node,tag){
+                        return node.getElementsByTagName(tag)[0].childNodes[0].nodeValue;
+                }
+
+                ,listing ,i ,pn=0
+                ,list_length
+                ,_locationNode
+                ,_detailsNode
+                ,streetaddress
+                ,city
+                ,state
+                ,zip
+                ,lat
+                ,_long
+                ,_status
+                ,price
+                ,listingurl
+                ,image
+                ,html
+                ,rlt
+                ,showRlt = function(xmlDoc){
+                    try {
+                    if(ERROR_CODE == 4){
+                        return;
+                    }
+                    html  = "<!Doctype html><html><head><title>Real Estate Listings</title></head><body>";
+                    html += "<h2>Real Estate Listings</h2><table border=1>";
+                    listing = xmlDoc.getElementsByTagName("Listing");
+                    list_length = listing.length;
+                    if(xmlDoc.documentElement.nodeName == "parsererror"){
+                        ERROR_CODE = 2;
+                        return;
+                    }
+                    if(list_length == 0){
+                        ERROR_CODE = 1;
+                        return;
+                    }
+                    for(i=0; i< list_length ; i++){
+                        _locationNode   = lNode(listing[i],"Location");
+                        streetaddress   = lValue(_locationNode,"StreetAddress");
+                        city            = lValue(_locationNode,"City");
+                        state           = lValue(_locationNode,"State");
+                        zip             = lValue(_locationNode,"Zip");
+                        lat             = lValue(_locationNode,"Lat");
+                        _long           = lValue(_locationNode,"Long");
+
+                        _detailsNode    = lNode(listing[i],"ListingDetails");
+                        _status         = lValue(_detailsNode,"Status");
+                        price           = lValue(_detailsNode,"Price");
+                        listingurl      = lValue(_detailsNode,"ListingUrl");
+                        image           = lValue(_detailsNode,"Image");
+
+                        html += "<tr><th colspan=7>Listing</th></tr>";
+                        html += "<tr><th>Location</th><th>Street</th><th>City</th><th>State</th><th>Zip</th><th>Lat</th><th>Long</th></tr>";
+                        html += "<tr><td></td><td>"+streetaddress+"</td><td>"+city+"</td><td>"+state+"</td><td>"+zip+"</td><td>"+lat+"</td><td>"+_long+"</td></tr>";
+                        html += "<tr><th>Details</th><th>Status</th><th>Price</th><th>Listing URL</th><th colspan=3>Image</th></tr>";
+                        html += "<tr><td></td><td>"+_status+"</td><td>"+price+"</td><td><a href='"+listingurl+"' target='blank'>Link to listing</a></td><td colspan=3><img src='"+image+"' /></td></tr>";
+                  
+                        }
+                     html +='</table><noscript><'+'/body></html>';
+
+                        rlt = window.open("","Real Estate Listings"+(pn++));
+                        rlt.document.write(html);
+                        rlt.document.close();
+                    }catch(e){
+                        ERROR_CODE = 2;
+                    }
+                };
+                document.getElementById("submit").addEventListener("click",function(e){
+                    ERROR_CODE = 0;
+                    e.preventDefault();
+                    query = document.getElementById("query").value;
+                    if (query.trim() == ""){
+                        ERROR_CODE = 3;
+                    }else{
+                        showRlt(getXML(query));
+                    }
+                    console.log(ERROR_CODE);
+                    switch(ERROR_CODE){
+                        case 1:
+                            alert("No Real Estate Listings!");
+                            break;
+                        case 2:
+                            alert("Invalid XML file!");
+                            break;
+                        case 3:
+                            alert("Empty Url");
+                            break;
+                        case 4:
+                            alert("File Not Found");
+                            break;
+                    }
+                });
+         })();
+
+    </script>
+    <noscript>
+</body>
+</html>
